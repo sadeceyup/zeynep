@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Zeynep'in Süper Kalpli Sayfası</title>
+    <title>Zeynep'in Kalpli Sayfası</title>
     <style>
         body {
             background-color: #fff0f5;
@@ -46,19 +46,17 @@
             100% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
         }
 
-        /* Daha fazla kalp için pozisyonlar */
         .heart1 { top: -50px; left: -80px; animation-delay: 0s; }
         .heart2 { top: -60px; right: -90px; animation-delay: 0.3s; }
         .heart3 { bottom: -50px; left: -70px; animation-delay: 0.6s; }
         .heart4 { bottom: -60px; right: -80px; animation-delay: 0.9s; }
         .heart5 { top: 0; left: -120px; animation-delay: 1.2s; }
-        .heart6 { top: 0; right: -130px; animation-delay: 1.5s; }
+        .heart6 { top: 0/internal-link; right: -130px; animation-delay: 1.5s; }
         .heart7 { top: -80px; left: 0; animation-delay: 1.8s; }
         .heart8 { bottom: -80px; right: 0; animation-delay: 2.1s; }
         .heart9 { top: -30px; left: -150px; animation-delay: 2.4s; }
         .heart10 { bottom: -30px; right: -150px; animation-delay: 2.7s; }
 
-        /* Ekstra hareketli kalpler */
         .floating-heart {
             position: absolute;
             font-size: 20px;
@@ -83,14 +81,13 @@
         <span class="heart heart4">♥</span>
         <span class="heart heart5">♥</span>
         <span class="heart heart6">♥</span>
-        . <span class="heart heart7">♥</span>
+        <span class="heart heart7">♥</span>
         <span class="heart heart8">♥</span>
         <span class="heart heart9">♥</span>
         <span class="heart heart10">♥</span>
     </div>
 
     <script>
-        // Rastgele yerlerden çıkan kalpler
         function createFloatingHeart() {
             const heart = document.createElement('span');
             heart.className = 'floating-heart';
@@ -98,12 +95,9 @@
             heart.style.left = Math.random() * 100 + 'vw';
             heart.style.animationDelay = Math.random() * 5 + 's';
             document.body.appendChild(heart);
-            
-            // 6 saniye sonra kalp kaybolsun
             setTimeout(() => heart.remove(), 6000);
         }
 
-        // Her 300ms'de bir yeni kalp oluştur
         setInterval(createFloatingHeart, 300);
     </script>
 </body>
